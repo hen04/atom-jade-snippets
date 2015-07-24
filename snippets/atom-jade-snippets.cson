@@ -108,21 +108,21 @@
     # script snippets
 
     'script(type="text/javascript", src="js/main.js")':
-        'prefix': 'script'
+        'prefix': 'script.source'
         'body': '''
             script(type='${1:text/javascript}', src='${2:js/main.js}', ${3:attr})
             $4
         '''
 
     'script.':
-        'prefix': 'script.'
+        'prefix': 'script.inline'
         'body': '''
             script.
                 $1
         '''
 
     'script include':
-        'prefix': 'inclscript'
+        'prefix': 'script.include'
         'body': '''
             script
                 include ${1:script.js}
@@ -142,14 +142,14 @@
         '''
 
     'style.':
-        'prefix': 'style.'
+        'prefix': 'style.inline'
         'body': '''
             style.
                 $1
         '''
 
     'style include':
-        'prefix': 'inclstyle'
+        'prefix': 'style.include'
         'body': '''
             style
                 include ${1:style.css}
