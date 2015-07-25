@@ -1,0 +1,31 @@
+'.source.jade':
+
+    # jade syntax snippets
+
+    'each val in [ 1, 2 ]':
+        'prefix': 'each'
+        'body': '''
+            - each ${1:val} in ${2:[ bla ]}
+                ${4:div= ${1:val}}
+        '''
+
+    'for( var i = 0; i <= 0; i++ )':
+        'prefix': 'for'
+        'body': '''
+            - for( var ${1:i} = ${2:0}; ${1:i} ${3:<= 0}; ${1:i}${4:++} )
+                ${5:div= ${1:val}}
+        '''
+
+    'include ./includes/file.jade':
+        'prefix': 'include'
+        'body': '''
+            include ${1:includes}/${2:file}.${3:jade}
+            $4
+        '''
+
+    '- var name = value':
+        'prefix': 'var'
+        'body': '''
+            - var ${1:name} = ${2:value}
+            $3
+        '''
