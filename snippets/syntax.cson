@@ -16,11 +16,18 @@
                 ${5:div= ${1:val}}
         '''
 
+    'extends ./templates/layout.jade':
+        'prefix': 'extends'
+        'body': '''
+            extends ${1:${2:./template}/${3:file}.${4:jade}}
+            $5
+        '''
+
     'include ./includes/file.jade':
         'prefix': 'include'
         'body': '''
-            include ${1:includes}/${2:file}.${3:jade}
-            $4
+            include ${1:${2:./includes}/${3:file}.${4:jade}}
+            $5
         '''
 
     '- var name = value':
@@ -28,4 +35,11 @@
         'body': '''
             - var ${1:name} = ${2:value}
             $3
+        '''
+
+    'block blockname':
+        'prefix': 'block'
+        'body': '''
+            block ${1:blockname}
+            $2
         '''
